@@ -1,0 +1,44 @@
+.main-container {
+    background-color: #000;
+    position: relative;
+   /* overflow: hidden;*/
+    width: 700px;
+    height: 400px;
+}
+.carousel-container {
+    display: flex;
+   /* overflow-x: visible;
+    transition-property: transform;
+    will-change: transform;*/
+    align-items: flex-start;
+   /* justify-content: center; */
+  }
+  
+  .carousel-image {
+    object-fit: contain;
+  }
+
+  .btn{
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    top: 50%;
+    border: 0;
+    transform: translateY(-50%);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+  }
+
+  .right{
+    right: 5px;
+  }
+  .left{
+    left: 5px;
+  }
+
+
+
