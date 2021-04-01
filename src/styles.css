@@ -1,15 +1,15 @@
 .main-container {
     background-color: #000;
     position: relative;
-   /* overflow: hidden;*/
-    width: 700px;
-    height: 400px;
+    overflow: hidden;
+    width: 360px;
+    
 }
 .carousel-container {
     display: flex;
-   /* overflow-x: visible;
+    overflow-x: visible;
     transition-property: transform;
-    will-change: transform;*/
+    will-change: transform;
     align-items: flex-start;
    /* justify-content: center; */
   }
@@ -40,5 +40,16 @@
     left: 5px;
   }
 
+  .selected-img{
+    margin: 20px 10px;
+    font-size: 28px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+}
+
+.currently-selected{
+    background-color: chocolate;
+}
 
 
