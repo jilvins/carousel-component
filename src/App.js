@@ -5,13 +5,33 @@ import './styles.css'
 function App () {
     const [currentIndex, setCurrentIndex] = useState(1)
     const [movement, setMovement] = useState(0)
-    const [windowsWidth, setWindowsWidth] = useState(360)
+    const [windowsWidth] = useState(360)
     const [transitionDuration, setStransitionDuration] = useState(0)
-    const [imageWidth, setImageWidth] = useState(360)
+    const [imageWidth] = useState(360)
     const [lastTouch, setLastTouch] = useState(0)
     const newSlide = imgs.map((slide) => (<img key={slide.id} src={slide.src} alt="slide-img" className="carousel-image" 
     style={{width: `${imageWidth}px`}}/> ))
 
+    /*useEffect(  () => {
+      setCurrentIndex(-(movement/imageWidth)+1)  
+      console.log(`${movement} and current levvel is ${currentIndex}`)
+        if (movement <= (0*imageWidth)) {
+          setCurrentIndex(1) && console.log(currentIndex)
+        } else if (movement <=((1*imageWidth)-1)) {
+          setCurrentIndex(2) && console.log(currentIndex)
+        } else if (movement <=(2*imageWidth)) {
+          setCurrentIndex(3)
+        }else if (movement <=(3*imageWidth)) {
+          setCurrentIndex(4)
+        }else if (movement <=(4*imageWidth)) {
+          setCurrentIndex(5)
+        }else if (movement <=(5*imageWidth)) {
+          setCurrentIndex(6)
+        }
+      },[currentIndex, movement, imageWidth]);
+      */
+
+    
     //functionality part
     const handleMovementX = (delta) => {
         
@@ -56,7 +76,7 @@ function App () {
       const transitionTo = (index, duration) => {
         
             setCurrentIndex(index)
-            setMovement(index * 700,)
+            setMovement(index * imageWidth,)
             setStransitionDuration(`${duration}s`)
             
         }
@@ -66,15 +86,15 @@ function App () {
     // button part
     function btnToRight () {
         setCurrentIndex(currentIndex+1);
-        console.log(currentIndex);
+        
         (currentIndex ===(imgs.length))? setCurrentIndex(0)&&setMovement(0) : setMovement(currentIndex*imageWidth*-1);
         
     }
     function btnToLeft () {
         setCurrentIndex(currentIndex-1);
-        console.log(currentIndex);
+        
         currentIndex===0? setCurrentIndex(imgs.length-1)&&setMovement(currentIndex*imageWidth*-1) : setMovement(currentIndex*imageWidth*-1)
-        console.log(imgs.length)
+       
     }
     const choosePic = (e) =>{
         console.log(`chosen image is ${currentIndex}`)
@@ -102,7 +122,7 @@ function App () {
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}>
-                <div className="carousel-container" style={{transform: `translateX(${movement}px)`,
+                <div className="carousel-container" style={{transform: `translateX(-${movement}px)`,
             transitionDuration: transitionDuration}}>
             {newSlide}
                 </div>
@@ -111,7 +131,7 @@ function App () {
             </div>
             {imgs.map((slide) => (
                 <button key={slide.id} onClick={choosePic} className={`selected-img
-                 ${(slide.id==currentIndex) ? "currently-selected" : "not-selected"}`}
+                 ${(slide.id===currentIndex) ? "currently-selected" : "not-selected"}`}
                 
                 >{slide.id}</button>
             ))}
