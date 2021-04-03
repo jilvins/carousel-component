@@ -2,20 +2,19 @@
     background-color: #000;
     position: relative;
     overflow: hidden;
-    width: 360px;
-    
+    margin: 0 auto;
 }
+
 .carousel-container {
     display: flex;
     overflow-x: visible;
     transition-property: transform;
     will-change: transform;
     align-items: flex-start;
-   /* justify-content: center; */
   }
   
   .carousel-image {
-    object-fit: contain;
+    object-fit: fill;
   }
 
   .btn{
@@ -41,11 +40,13 @@
   }
 
   .selected-img{
-    margin: 20px 10px;
+   
+    left: 30%;
     font-size: 28px;
     border-radius: 25px;
     border: none;
     outline: none;
+    align-items: center;
 }
 
 .currently-selected{
