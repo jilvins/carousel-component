@@ -1,8 +1,10 @@
+body{
+  background-color: #000;
+}
 .main-container {
-    background-color: #000;
     position: relative;
     overflow: hidden;
-    margin: 0 auto;
+    margin: 10% auto;
 }
 
 .carousel-container {
@@ -14,7 +16,7 @@
   }
   
   .carousel-image {
-    object-fit: fill;
+    object-fit: cover;
   }
 
   .btn{
@@ -22,10 +24,13 @@
     position: absolute;
     align-items: center;
     justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
     width: 40px;
     height: 40px;
     top: 50%;
-    border: 0;
+    border: none;
+    outline: none;
     transform: translateY(-50%);
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.5);
@@ -38,11 +43,16 @@
   .left{
     left: 5px;
   }
-
+  .nav-btns{
+    position: absolute;
+    transform: translateY(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    bottom: 10px;
+  }
   .selected-img{
-   
     left: 30%;
-    font-size: 28px;
     border-radius: 25px;
     border: none;
     outline: none;
