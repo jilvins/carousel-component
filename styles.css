@@ -1,25 +1,23 @@
-body{
+.carousel {
   background-color: #000;
+  margin: 0;
+  padding: 10px 0;
 }
 .main-container {
     position: relative;
     overflow: hidden;
     margin: 10% auto;
+    border: 5px ridge #66586D;
 }
-
 .carousel-container {
     display: flex;
-    overflow-x: visible;
-    transition-property: transform;
-    will-change: transform;
     align-items: flex-start;
+    overflow-x: visible;
+  }  
+.carousel-image {
+    object-fit: fill;
   }
-  
-  .carousel-image {
-    object-fit: cover;
-  }
-
-  .btn{
+.btn {
     display: flex;
     position: absolute;
     align-items: center;
@@ -36,14 +34,13 @@ body{
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
   }
-
-  .right{
+.right {
     right: 5px;
   }
-  .left{
+.left {
     left: 5px;
   }
-  .nav-btns{
+.nav-btns {
     position: absolute;
     transform: translateY(-50%);
     width: 100%;
@@ -51,16 +48,21 @@ body{
     justify-content: center; 
     bottom: 10px;
   }
-  .selected-img{
+.select-btns {
     left: 30%;
     border-radius: 25px;
     border: none;
     outline: none;
     align-items: center;
-}
-
-.currently-selected{
-    background-color: chocolate;
-}
+    height: 10px;
+    font-size: 8px;
+    cursor: pointer;
+    color: whitesmoke;
+    background-color: whitesmoke;
+  }
+.currently-selected {
+    background-color: darkslategray;
+    color: darkslategrey;
+  }
 
 
